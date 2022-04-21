@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/write/write",
+    "pages/admin/admin",
+    "pages/message/message"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#AEEEEE",
+    "navigationBarTitleText": "Message",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "cu-custom": "./colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json"
+}

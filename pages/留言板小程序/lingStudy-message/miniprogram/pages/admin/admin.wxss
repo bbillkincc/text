@@ -1,0 +1,19 @@
+/* pages/admin/admin.wxss */
+
+
+.me-bgcolor{
+  background-color: #fff;
+}
+
+.bd-hr{
+  height: 3rpx;
+  margin-top: 20rpx;
+  width: 100%;
+  background-color: darkgray;
+}
+
+.mar-l{
+  margin-left: 170rpx;
+  border-left: 10rpx solid green;
+  text-indent: 0.4em;
+}

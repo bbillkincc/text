@@ -1,0 +1,29 @@
+<!--pages/write/write.wxml-->
+<!-- 写留言界面 -->
+
+<!-- 自定义状态栏 bg-lightGrey -->
+<cu-custom bgColor="bg-lightGrey" isBack="{{false}}" isCustom="{{true}}" isNav="{{false}}">
+	<view slot="backText">返回</view>
+	<view slot="content" class="text-shadow-meows">
+		<text class="text-white text-bold">作者回复</text>
+	</view>
+</cu-custom>
+
+<!-- 文章标题 -->
+<view class="title">{{title}}</view>
+
+<!-- 输入框 -->
+<view class="text-message-container">
+	<textarea class="textarea-style" bindinput='getMessages' placeholder="回复{{nickName}}" maxlength='500' placeholder-style="font-size:32rpx;background-color:#ccc" value='{{messagesnull}}'>
+  </textarea>
+</view>
+
+<!-- 提交留言 -->
+<view class="submit-area">
+	<!-- 留言按钮 -->
+	<view class="btn-container">
+		<form name="pushMsgF">
+			<button form-type="submit" bindtap="postMessage" class="power-btn">回复</button>
+		</form>
+	</view>
+</view>

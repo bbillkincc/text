@@ -1,0 +1,41 @@
+<!--pages/admin/admin.wxml-->
+<!-- 自定义状态栏 bg-lightGrey -->
+<cu-custom bgColor="bg-lightGrey" isBack="{{false}}" isCustom="{{true}}" isNav="{{false}}">
+	<view slot="backText">返回</view>
+	<view slot="content" class="text-shadow-meows">
+		<!-- <text class="text-white text-bold">{{postId}}</text> -->
+		<text class="text-white text-bold">后台管理</text>
+	</view>
+</cu-custom>
+
+<view class="cu-bar bg-white align-center">
+	<view class="action border-title">
+		<text class="text-xl text-bold text-blue">审核评论</text>
+		<text class="bg-gradual-blue" style="width:2.8rem"></text>
+	</view>
+</view>
+
+<view class="margin-bottom me-bgcolor">
+	<view class="margin-sm flex flex-wrap align-center" wx:for="{{commentList}}" wx:key="keyId" wx:for-index="index" data-id="{{index}}">
+
+  <block wx:if="{{!item.flag}}">
+		<view class="basis-xs">
+			<view class="cu-avatar lg round margin-left-sm" style="background-image:url({{item.email!=''?item.userURL:'https://gravatar.loli.net/avatar/undefined/?s=256&d=mp'}});"></view>
+		</view>
+		<view class="grid col-1 basis-xl" style="min-height:120rpx;">
+			<view class="padding-xs">
+				<text class="text-black text-bold">{{item.Nickname}}</text>
+				<view class="fr text-xs" style="line-height: 32rpx;">
+					<text class="text-grey">{{item.time}}</text>
+				</view>
+			</view>
+			<view class="padding-sm">
+				<text class="text-sm">{{item.content}}</text>
+				<view class="text-blue padding-top-xs" bindtap="toreply" data-index="{{index}}">通过审核</view>
+			</view>
+		</view>
+
+		<view class="bd-hr"></view>
+  </block>
+	</view>
+</view>

@@ -1,0 +1,63 @@
+<!-- 留言展示界面 -->
+<view class="title">七大blog开源框架介绍</view>
+
+<view wx:if="{{!hasUserInfo && canIUse}}">
+  <button class="power-btn" open-type="getUserInfo" bindgetuserinfo="getUserInfo">登录授权</button>
+</view>
+
+<!-- <block wx:else> -->
+<view class="wrap">
+	<view class="header-text">
+		<view class="select-message">精选留言</view>
+		<view class="write-message" bindtap="writemessage">写留言</view>
+	</view>
+</view>
+
+<!-- <block wx:for="{{messages}}" wx:key="key" wx:for-item="item" wx:for-index="index"> -->
+<view class="comment_title">
+	<text class="iconfont iconpinglun"></text>
+	<text class="comment_text">最新留言</text>
+</view>
+<!-- 最新评论 -->
+<view class="comment" v-if="comment.length">
+	<view class="comment_list">
+		<view class="comment_item" v-for="item in comment" :key="item.id">
+			<!-- 用户信息 -->
+			<view class="comment_user">
+				<!-- 用户头像 -->
+				<view class="user_icon">
+					<image mode="widthFix" src="../../images/ntx.jpg"></image>
+				</view>
+				<!-- 用户名称 -->
+				<view class="user_name">
+					<view class="user_nickname">编程之外</view>
+					<view class="user_time">5天前</view>
+				</view>
+				<!-- 用户徽章 -->
+				<!-- <view class="user_badge">
+					<image v-for="item2 in item.user.title" :key="item2.icon" :src="item2.icon"></image>
+				</view> -->
+			</view>
+			<!-- 评论数据 -->
+			<view class="comment_desc">
+				<view class="comment_content">非常详细~施工方得高高的个梵蒂冈电饭锅第三方刚发的规划二姨太容易电饭锅电饭锅</view>
+				<view class="comment_like">
+					<text class="iconfont icondianzan">5</text>
+				</view>
+			</view>
+			<!-- 回复图标 -->
+			<view class="reply-container">
+				<!-- <view class="autor-reply-line"></view> -->
+				<view class="author-text">栈主：</view>
+			</view>
+			<!-- 作者回复内容 -->
+			<view class="reply-message">
+				内容太多了发生的纠纷或市政府的圣诞节还是水电费客家话似懂非~
+			</view>
+
+		</view>
+	</view>
+</view>
+<!-- </block> -->
+<!-- 最新评论结束 -->
+<!-- </block> -->
